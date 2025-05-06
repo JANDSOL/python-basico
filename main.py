@@ -124,3 +124,70 @@
 # End: Conversión de tipos de datos básicos
 
 # End: Operadores aritméticos
+
+
+# Start: Condicionales
+# num_input = float(input("Ingresa un número: "))
+# if num_input < 0:
+#     # Bloque de código que se ejecuta
+#     print("Número negativo.")
+# elif num_input == 0:
+#     # Bloque de código que se ejecuta
+#     print("Cero.")
+# else:
+#     # Bloque de código que se ejecuta
+#     print("Número positivo.")
+
+# 1. Implementa un programa que solicite la edad y que este determine si la persona es menor de edad, mayor o tiene edad de jubilación.
+# Code of Fabiola
+# num_input = int(input("ingrese edad: "))
+# if num_input >= 70:
+#     print("Edad para jubilarse")
+# elif num_input >= 18:
+#     print("mayoria de edad")
+# else:
+#     print("menor de edad")
+# Code of Heymi
+# edad_persona = int(input("Ingresa tu edad: "))
+# if edad_persona < 18:
+#     print("Menor de edad")
+# elif edad_persona >= 18 and edad_persona <= 69:
+#     print("Mayor de edad")
+# else:
+#     print("Edad de jubilacion")
+# Posible solución problema 1:
+# edad = int(input("Ingresa tu edad: "))
+# if edad < 18:
+#     print("Eres menor de edad.")
+# elif edad >= 65:
+#     print("Ya puedes jubilarte.")
+# else:
+#     print("Eres un adulto.")
+
+# 2. Implementa un programa que solicite una contraseña y verifica si es correcta o incorrecta. “Tú defines cuál es la contraseña correcta”.
+# Code of Fabiola
+# contra = input("ingrese contrasena: ")
+# if contra == "0":
+#     print("contrasena correcta")
+# else:
+#     print("contrasena incorrecta")
+# Posible solución problema 2:
+# contraseña_correcta = "Python123"
+# contraseña_usuario = input("Ingresa la contraseña: ")
+# if contraseña_usuario == contraseña_correcta:
+#     print("¡Acceso concedido!")
+# else:
+#     print("Contraseña incorrecta. Inténtalo de nuevo.")
+# 3. Implementa un programa que solicite dos números, determina cuál es el mayor, o si son iguales.
+# Posible solución problema 3:
+# num1 = float(input("Ingresa el primer número: "))
+# num2 = float(input("Ingresa el segundo número: "))
+# if num1 > num2:
+#     print(f"El número mayor es {num1}")
+# elif num2 > num1:
+#     print(f"El número mayor es {num2}")
+# else:
+#     print("Ambos números son iguales")
+
+# End: Condicionales
+
