@@ -1,3 +1,6 @@
+import random
+import math
+
 # Start: Sintaxis
 # if True:
 #     print("Hola mundo")
@@ -283,4 +286,13 @@
 
 # End: Bucle For
 
-
+# Start: Librería estándar en Python
+# while True:
+#     num_ale = random.randint(0, 20)
+#     print(num_ale)
+#     if num_ale == 20:
+#         break
+# print()
+# print(math.sqrt(16))
+# print(math.pi)
+# End: Librería estándar en Python
