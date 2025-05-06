@@ -191,3 +191,96 @@
 
 # End: Condicionales
 
+
+# Start: Bucle While
+# a, b = 0, 1
+# while a < 10:
+#     print(a, b)
+#     a = b
+#     b = a + b
+
+# num_recorrer = int(input("Números a recorrer: "))
+# num_actual = 1
+# while True:
+#     num_actual += 1
+#     print(num_actual)
+#     if num_actual == 10:
+#         break
+
+# while True:  # Bucle infinito hasta que el usuario ingrese un número negativo
+#     numero = int(input("Ingrese un número (negativo para salir): "))
+#     if numero < 0:
+#         print("Número negativo detectado. ¡Fin del programa!")
+#         break  # Rompe el bucle
+#     print(f"El número ingresado es: {numero}")
+
+# numero = 0
+# while numero < 10:
+#     numero += 1
+#     if (numero % 2) != 0:  # Si el número es impar...
+#         continue  # Salta el resto del código y pasa a la siguiente iteración
+#     print(numero)  # Solo imprime los números pares
+
+# End: Bucle While
+
+# Start: Bucle For
+# words = ['gato', 'perro', 'pájaro']
+# for word in words:         # Recorre cada palabra en la lista
+#     print(word, len(word)) # Muestra la palabra y con la función len(), la longitud de la misma.
+
+# for i in range(5):  # Crea una secuencia del 0 al 4.
+#     print(i)
+# print('')
+
+# for i in range(2, 7): # Crea una secuencia del 2 al 6.
+#     print(i)
+# print('')
+
+# for i in range(1, 10, 2): # Crea una secuencia del 1 al 9 saltando de 2 en 2.
+#     print(i)
+# print('')
+
+# for i in range(10, 0, -2): # Crea una secuencia en reversa del 10 al 2 saltando de 2 en 2.
+#     print(i)
+# print('')
+
+# Ejercicio 1: Escribe un programa que pida un número y haga una cuenta regresiva hasta 0 usando while.
+# num = int(input("Ingrese un número: "))
+# while num >= 0:
+#     print(num)
+#     num -= 1  # Disminuye el número
+
+# Ejercicio 2: Escribe un programa para mostrar los números pares  desde 0 hasta 20.
+# for i in range(0, 21, 2):  # Empieza en 0, aumenta de 2 en 2 hasta 20
+#     print(i)
+
+# Ejercicio 3: Crea una lista de números y úsala para calcular la suma total.
+# numeros = [3, 7, 5, 1, 9]
+# suma = 0
+# for n in numeros:
+#     suma += n  # Acumula los valores
+# print("La suma total es:", suma)
+
+# Ejercicio 4: Crea un programa que pida una contraseña hasta que sea correcta. “Tú defines cuál es la contraseña correcta”.
+# Posible solución:
+# contraseña_correcta = "Python123"
+# while True:  # Bucle infinito hasta que la condición se cumpla o el bucle se rompa con "break"
+#     contraseña_usuario = input("Ingrese la contraseña: ")
+#     if contraseña_correcta == contraseña_usuario:
+#         print("¡Acceso concedido!")
+#         break
+#     print("Contraseña incorrecta, intenta de nuevo.\n")
+# Code of Jimena:
+# passwd_correcta = "123Python"
+# passwd = ""
+# while passwd != passwd_correcta:
+#     passwd = input("Ingresa contraseña: ")
+#     if passwd == passwd_correcta:
+#         print("¡Contraseña correcta!")
+#         break
+#     else:
+#         print("Contraseña incorrecta, intentalo de nuevo")
+
+# End: Bucle For
+
+
