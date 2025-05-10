@@ -311,3 +311,108 @@
 # print(unicos)  # Output: {'b', 'a', 'd', 'c'}
 
 # End: Estructura de datos
+
+
+# Start: Funciones
+## Definición de una función
+# def saludar(nombre):
+#     """Imprime un saludo personalizado."""
+#     print(f"¡Hola, {nombre}!")
+## Definición de una función con docstring más detallado
+# def saludar(nombre):
+#     """Muestra un mensaje de saludo personalizado.
+
+#     Params:
+#         nombre (str): El nombre de la persona a saludar.
+
+#     Returns:
+#         None: Solo imprime el saludo en pantalla.
+#     """
+#     print(f"¡Hola, {nombre}!")
+
+
+# saludar("Felipe")  # Argumentos posicionales.
+# saludar(nombre="Pedro")  # Argumentos con nombre (keyword).
+
+## Acceso doc
+# print("-" * 20)
+# print(saludar.__doc__)
+# print("-" * 20)
+# help(saludar)
+# print("-" * 20)
+
+
+## Función con retorno
+# def calculo(a, b, c):
+#     """Es para hacer un cálculo."""
+#     return (a + b) * c
+
+
+# resultado_calculo = calculo(a=2, b=3, c=4)
+# print(resultado_calculo)
+
+
+## Función sin retorno
+# def sin_retorno():
+#     a = 5 + 3
+
+
+# resultado = sin_retorno()
+# print(f"La función sin retorno devuelve: {resultado}")
+
+
+## Parámetros con valores por defecto
+# def potencia(base, exponente=2):
+#     return base**exponente
+
+
+# print(potencia(base=5))
+# print(potencia(5, 3))
+
+
+## Ejercicio 1: Define la función es_par(n) que devuelva True si n es par y False si es impar.
+# def es_par(n):
+#     """Devuelve True si n es par, False si es impar."""
+#     return n % 2 == 0
+
+
+# print(es_par(4))  # True
+# print(es_par(7))  # False
+# print("-" * 40)
+
+
+## Ejercicio 2: Llama a una función saludar_persona() usando parámetros en distinto orden con nombre (keyword).
+# def saludar_persona(nombre, edad):
+#     """Imprime un saludo con el nombre y la edad de la persona."""
+#     print(f"Hola {nombre}, tienes {edad} años.")
+
+
+# saludar_persona(nombre="María", edad=25)
+# saludar_persona(edad=30, nombre="Juan")
+# print("-" * 40)
+
+
+# Ejercicio 3: Define una función que devuelva en una tupla la suma y la diferencia de dos números y captura ambos valores en variables.
+# def suma_y_diferencia(a, b):
+#     """Devuelve la suma y la diferencia de los dos números dados."""
+#     return (a + b, a - b)
+
+
+# resultado_suma, resultado_diferencia = suma_y_diferencia(10, 4)
+# print(f"Suma: {resultado_suma}, Diferencia: {resultado_diferencia}")
+
+
+# Ejercicio 4: Define la función presentarse(nombre, edad=None) que imprima un mensaje distinto según si se conoce la edad o no.
+# def presentarse(nombre, edad=None):
+#     """Imprime una presentación con o sin edad según el parámetro recibido."""
+#     if edad is not None:
+#         print(f"Hola, mi nombre es {nombre} y tengo {edad} años.")
+#     else:
+#         print(f"Hola, mi nombre es {nombre}.")
+
+
+# presentarse("Juan", 30)  # "Hola, mi nombre es Juan y tengo 30 años."
+# presentarse("María")  # "Hola, mi nombre es María."
+
+
+# End: Funciones
