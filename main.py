@@ -415,4 +415,173 @@
 # presentarse("María")  # "Hola, mi nombre es María."
 
 
+## Funciones como objetos de primera clase
+### Asignar a una variable
+# def cuadrado(x):
+#     return x * x
+
+
+# f_cuadrado = cuadrado
+# print(cuadrado(5))
+# print(f_cuadrado(5))
+
+
+### Pasar la función como un argumento
+# def cuadrado(x):
+#     return x * x
+
+
+# def aplica_funcion(func, valor):
+#     return func(valor)
+
+
+# resultado = aplica_funcion(func=cuadrado, valor=6)
+# print(resultado)
+
+
+### Devolver función desde otra
+# def generador_de_saludo(saludo):
+#     def saludar(nombre):
+#         print(saludo, nombre)
+
+#     return saludar
+
+
+# f_hola = generador_de_saludo("Hola,")
+# f_hola("Carlos.")
+
+
+### Uso con funciones integradas (incorporadas)
+# def cuadrado(x):
+#     return x * x
+
+
+# tupla = (1, 2, 3, 4)
+# tupla_por_cuadrado = tuple(map(cuadrado, tupla))
+# print(tupla, tupla_por_cuadrado)
+
+### Bonus: Funciones lamba
+# La sintaxis de una función lambda:
+# lambda argumentos: expresión
+# argumentos → Son los valores que recibe la función.
+# expresión → Es la operación que se realiza con los argumentos y el resultado que se devuelve.
+
+
+# En lugar de definir una función tradicional como esta:
+# def suma_dos(x):
+#     return x + 2
+
+
+# print(suma_dos(5))  # Salida: 7
+
+# # Puedes hacer lo mismo con una función lambda:
+# suma_dos_lambda = lambda x: x + 2
+# print(suma_dos_lambda(5))  # Salida: 7
+
+
+### Ejercicio 1: Define una función sencilla (por ejemplo, que sume 2) y úsala con map() para aplicarla sobre una lista de números.
+# def suma_dos(x):
+#     return x + 2
+
+
+# numeros = [1, 2, 3, 4, 5]
+# resultado = list(map(suma_dos, numeros))
+# print(resultado)  # Salida: [3, 4, 5, 6, 7]
+
+
+### Ejercicio 2: Crea una lista que contenga dos o tres funciones (por ejemplo str.lower, str.upper) y aplica cada una a la misma cadena.
+# funciones = [str.lower, str.upper, lambda x: x[::-1]]
+# cadena = "Python"
+
+# resultado_funciones = [f(cadena) for f in funciones]
+# print(resultado_funciones)  # Salida: ['python', 'PYTHON', 'nohtyP']
+
+
+### Ejercicio 3: Crea una función crear_multiplicador(n) que retorne otra función que multiplica su argumento por n.
+# Usa esa función para crear un duplicador y un triplicador.
+# def crear_multiplicador(n):
+#     return lambda x: x * n
+
+
+# duplicador = crear_multiplicador(2)
+# triplicador = crear_multiplicador(3)
+
+# print(duplicador(5))  # Salida: 10
+# print(triplicador(5))  # Salida: 15
+
+
+## Argumentos *args y **kwargs
+# def ejemplo(*args, **kwargs):
+#     print("args:", args)  # Tupla con argumentos posicionales.
+#     print("kwargs:", kwargs)  # Diccionario con argumentos nombrados (keyword).
+
+
+# ejemplo(1, 2, 3, nombre="Juan", edad=25)
+
+### Ejemplo 1
+# def suma_todos(*numeros):
+#     total = 0
+#     for n in numeros:
+#         total += n
+#     return total
+
+
+# print(suma_todos(1, 2, 3, 4)) # 10
+
+
+### Ejemplo 2
+# def mostrar_info(**info):
+#     for clave, valor in info.items():
+#         print(clave, "->", valor)
+
+
+# mostrar_info(nombre="Ana", edad=22, ciudad="Lima")
+
+### Bonus: Desempaquetando estructura de datos
+# Desempaquetado de listas, tuplas y sets
+# numeros = [100, 500, 300]
+# numeros_tuplas = (100, 500, 300)
+# numeros_sets = {100, 500, 300}
+# print(numeros, *numeros)
+# print(numeros_tuplas, *numeros_tuplas)
+# print(numeros_sets, *numeros_sets)
+
+
+# Desempaquetado de diccionarios
+# def output_info(**kwargs):
+#     for clave, valor in kwargs.items():
+#         print(f"{clave}: {valor}")
+
+
+# info_dict = {"nombre": "Juan", "curso": "Python", "año": 2025}
+# print(info_dict)
+# output_info(**info_dict)
+
+### Ejercicio 1: Crea una función listar_alumnos(*nombres) que imprima cada nombre recibido en una nueva línea.
+# def listar_alumnos(*nombres):
+#     for nombre in nombres:
+#         print(nombre)
+
+# listar_alumnos("Juan", "María", "Carlos")
+
+
+### Ejercicio 2: Crea una función crear_cita(**info) que reciba datos como fecha, hora, descripcion y los imprima en un formato de cita.
+# def crear_cita(**info):
+#     print(f"Cita agendada:")
+#     for clave, valor in info.items():
+#         print(f"{clave.capitalize()}: {valor}")
+
+# crear_cita(fecha="10/05/2025", hora="15:30", descripcion="Consulta médica")
+
+
+### Ejercicio 3: Dada la lista nums = [1,2,3] y el diccionario datos = {'a': 10, 'b': 20}, llama a una función que acepte *args y **kwargs usando *nums y **datos.
+# def procesar_datos(*args, **kwargs):
+#     print("Argumentos posicionales:", args)
+#     print("Argumentos nombrados:", kwargs)
+
+# nums = [1, 2, 3]
+# datos = {'a': 10, 'b': 20}
+# procesar_datos(*nums, **datos)
+
+
 # End: Funciones
