@@ -583,5 +583,61 @@
 # datos = {'a': 10, 'b': 20}
 # procesar_datos(*nums, **datos)
 
-
 # End: Funciones
+
+# Start: Modularización
+## Módulos estándar (python)
+# import math
+
+# print(math.sqrt(16))
+
+# from math import ceil
+
+# from math import * # Evita hacer importación global, ya que contamina el espacio de nombres y puede causar conflictos de nombres.
+# print(ceil(4.99))
+
+# import datetime as dt
+
+# hoy = dt.date.today()
+# print(hoy)
+
+## Creando nuestros propios módulos
+# import utils
+# from utils import saluda_persona as sal_per
+# from utils import NUMERO_ACIERTOS
+
+# print(utils.saluda_persona("Eva"))
+# print(sal_per("Juan"))
+# print(NUMERO_ACIERTOS)
+
+
+## Ejercicio: Define un módulo operaciones.py con funciones de suma, resta, multiplicación y división. Luego, imprímelas desde otro archivo.
+# Colocar en operaciones.py
+# def sumar(a, b):
+#     return a + b
+
+
+# def restar(a, b):
+#     return a - b
+
+
+# def multiplicar(a, b):
+#     return a * b
+
+
+# def dividir(a, b):
+#     if b == 0:
+#         return "Error: División por cero"
+#     return a / b
+
+
+# Colocar en main.py
+# from operaciones import sumar, restar, multiplicar, dividir
+
+# print(f"Suma desde main.py: {sumar(5, 6)}")
+# print(f"Resta desde main.py: {restar(20, 4)}")
+# print(f"Multiplicación desde main.py: {multiplicar(10, 2)}")
+# print(f"División desde main.py: {dividir(8, 4)}")
+
+
+# End: Modularización
