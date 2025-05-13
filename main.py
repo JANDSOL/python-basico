@@ -639,5 +639,112 @@
 # print(f"Multiplicación desde main.py: {multiplicar(10, 2)}")
 # print(f"División desde main.py: {dividir(8, 4)}")
 
-
 # End: Modularización
+
+# Start: Paquetes
+## Maneras de importar desde un paquete
+# import mi_paquete.saludos
+# import mi_paquete.adios
+
+# mi_paquete.saludos.hola()
+# mi_paquete.adios.hasta_luego()
+
+# from mi_paquete import saludos
+# from mi_paquete import adios
+
+# saludos.hola()
+# adios.hasta_luego()
+
+# from mi_paquete import saludos as s
+
+# s.hola()
+
+## Exposición directa de sub módulos
+
+# from mi_paquete import hola, hasta_luego, suma_dos_lambda
+# from mi_paquete.saludos import TIEMPO_SEGUNDOS
+# import mi_paquete.sub_paquete
+# hola()
+# hasta_luego()
+# print(suma_dos_lambda(5))
+# print(TIEMPO_SEGUNDOS)
+
+# End: Paquetes
+
+# Start: Variables mutables e inmutables
+# Ejemplo inmutable:
+# a = "hola"
+# print(a)
+# b = a
+# a = a + " mundo"   # a ahora apunta a un nuevo string "hola mundo"
+# print(a)
+# print(b)           # sigue siendo "hola"
+
+# Ejemplo mutable:
+# lista1 = [1, 2, 3]
+# lista2 = lista1
+# lista1.append(4)
+# print(lista1)
+# print(lista2)      # [1, 2, 3, 4]  (ambos apuntan a la misma lista)
+
+# Uso de copia:
+## Listas
+# lista1 = [1, 2, 3]
+# lista2 = list(lista1) # crea una copia
+# lista1.append(4)
+# print(lista1, lista2)
+
+## Tuplas (no necesitan copia porque son inmutables)
+# tupla1 = (1, 2, 3)
+# tupla2 = tuple(tupla1)  # Aunque no es necesario, se puede hacer una copia explícita
+# tupla1 += (4,)  # Se crea una nueva tupla
+# print(tupla1, tupla2)  # (1, 2, 3, 4) (1, 2, 3)
+
+## Diccionarios
+# dict1 = {"x": 10, "y": 20}
+# dict2 = dict1.copy()  # Se crea una copia independiente
+# dict1["z"] = 30
+# print(dict1, dict2)  # {"x": 10, "y": 20, "z": 30} {"x": 10, "y": 20}
+
+## Ámbito de variables
+# Variable global vs local:
+# x = 10  # global
+
+# def mostrar():
+#     x = 5  # variable local dentro de la función
+#     print(x)
+
+# mostrar()  # imprime 5
+# print(x)   # imprime 10 (no cambió)
+
+# Uso de global:
+# contador = 0
+
+# def incrementar():
+#     global contador
+#     contador += 1
+
+# incrementar()
+# print(contador)  # ahora contador es 1
+
+
+# Variable en closure (nonlocal):
+# def fuera():
+#     y = 0
+
+#     def dentro():
+#         nonlocal y
+#         y += 5
+#         return y
+
+#     return dentro
+
+
+# func = fuera()
+# print(func())  # 5
+# print(func())  # 10
+# print(func())  # 15
+# print(func())  # 20
+# Un closure es una función definida dentro de otra función que recuerda las variables del ámbito donde fue creada, incluso después de que la función externa haya terminado su ejecución.
+
+# End: Variables mutables e inmutables
