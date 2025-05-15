@@ -116,3 +116,26 @@
 # print(any(char.isupper() for char in texto))
 
 # End: Lanzando excepciones
+
+# Start: Decoradores
+# def requiere_permiso(func):
+#     """Función para preguntar si un usuario tiene permiso."""
+
+#     def wrapper(usuario, *args, **kwargs):
+#         if usuario != "admin":
+#             print("✖️  Acceso denegado: no tienes permisos.")
+#             return None
+#         return func(usuario, *args, **kwargs)
+
+#     return wrapper
+
+
+# @requiere_permiso
+# def eliminar_datos(usuario):
+#     """Función para simular la eliminación de datos."""
+#     print(f"🗑️  Datos eliminados por {usuario}")
+
+
+# eliminar_datos(usuario="invitado")
+# eliminar_datos(usuario="admin")
+# End: Decoradores
