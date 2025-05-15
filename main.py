@@ -139,3 +139,63 @@
 # eliminar_datos(usuario="invitado")
 # eliminar_datos(usuario="admin")
 # End: Decoradores
+
+
+# Start: POO
+## Start: Clases
+### Ejemplo sintaxis
+# class Perro:
+#     """Clase para representar a un perro."""
+
+#     pass
+
+# mi_perro = Perro()
+# print(type(mi_perro))
+
+
+### Ejemplo constructor
+# class Persona:
+#     """Clase para representar a una persona."""
+
+#     cerebro = 1  # Atributo de la clase.
+
+#     def __init__(self, nombre, edad):
+#         # Atributos de la instancia.
+#         self.nombre = nombre
+#         self.edad = edad
+
+
+# p_1 = Persona(nombre="Ana", edad=30)
+# print(p_1.nombre, p_1.edad)
+# print(p_1.cerebro)
+# print("-" * 40)
+# p_2 = Persona("Pedro", 15)
+# print(p_2.nombre, p_2.edad)
+# print(p_2.cerebro)
+
+
+### Clases y objetos
+# class Coche:
+#     """Clase para representar un coche."""
+
+#     ruedas = 4
+
+#     def __init__(self, marca, modelo, color=None):
+#         self.marca = marca
+#         self.modelo = modelo
+#         self.color = color
+
+#     def detalles(self):
+#         """Devuelve todos los detalles del coche."""
+#         if not self.color:
+#             return f"- Coche de {self.ruedas} ruedas: {self.marca} {self.modelo}"
+#         return f"- Coche {self.color.lower()} de {self.ruedas} ruedas: {self.marca} {self.modelo}"
+
+
+# mi_coche = Coche("Toyota", "Corolla")
+# print(mi_coche.detalles())
+# mi_coche_2 = Coche(color="ROJO", modelo="ONIX TURBO RS", marca="Chevrolet")
+# print(mi_coche_2.detalles())
+## End: Clases
+
+# End: POO
