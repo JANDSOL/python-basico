@@ -198,4 +198,110 @@
 # print(mi_coche_2.detalles())
 ## End: Clases
 
+
+## Start: Atributos y métodos de las clases (incluyendo métodos especiales)
+### Métodos especiales (str y repr)
+# class Persona:
+#     """Clase para representar a una persona."""
+
+#     def __init__(self, nombre, edad):
+#         self.nombre = nombre
+#         self.edad = edad
+
+#     def __str__(self):
+#         return f"{self.nombre}, {self.edad} años"
+
+#     def __repr__(self):
+#         return f"Persona(nombre={self.nombre!r}, edad={self.edad})"
+
+
+# p = Persona("Laura", 40)
+# print(p, ".---.", str(p))
+# print(repr(p))
+
+### Métodos especiales (eq)
+# class Punto:
+#     """Clase para representar un punto en una coordenada."""
+
+#     def __init__(self, x, y):
+#         self.x = x
+#         self.y = y
+
+#     def __eq__(self, otro_obj):
+#         return (
+#             isinstance(otro_obj, Punto)
+#             # isinstance() es una función incorporada que verifica si
+#             # un objeto pertenece a una determinada clase o subclase.
+#             and self.x == otro_obj.x
+#             and self.y == otro_obj.y
+#         )
+
+#     def __repr__(self):
+#         return f"Punto({self.x}, {self.y})"
+
+
+# p1 = Punto(3, 4)
+# p2 = Punto(3, 4)
+# print(p1, p2)
+# print(p1 == p2)  # True gracias a __eq__
+# print(p1, p2)  # Punto(3, 4) gracias a __repr__
+
+
+### Métodos de instancia
+# class Persona:
+#     """Clase para representar a una persona."""
+
+#     def __init__(self, nombre):
+#         self.nombre = nombre
+
+#     def saludar(self):
+#         """Método de instancia que saluda a una persona."""
+#         return f"Hola, soy {self.nombre}"
+
+
+# p = Persona("Juan")
+# print(p.saludar())
+# p_2 = Persona("Felipe")
+# print(p_2.saludar())
+
+
+### Métodos de clase
+# class Persona:
+#     """Clase para representar a una persona."""
+
+#     contador = 0
+
+#     def __init__(self, nombre):
+#         self.nombre = nombre
+#         Persona.contador += 1
+
+#     @classmethod
+#     def total_personas(cls):
+#         """Método de clase para mostrar cuántas personas se han creado con la clase."""
+#         return f"Se han creado {cls.contador} personas."
+
+
+# p_1 = Persona("Ana")
+# p_2 = Persona("Luis")
+# print(Persona.total_personas())
+
+
+### Métodos estáticos
+# class Matematicas:
+#     """Clase para representar algunas operaciones matemáticas."""
+
+#     @staticmethod
+#     def sumar(a, b):
+#         """Método estático para sumar dos números"""
+#         return a + b
+
+#     @staticmethod
+#     def restar(a, b):
+#         """Método estático para sumar dos números"""
+#         return a - b
+
+
+# print(Matematicas.sumar(5, 3))
+# print(Matematicas.restar(5, 3))
+
 # End: POO
