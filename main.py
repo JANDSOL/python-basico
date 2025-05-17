@@ -431,4 +431,281 @@
 # mi_auto = Coche(marca="Toyota", motor=motor_v6)
 # mi_auto.enceder()
 
+
+## Polimorfismo
+### Operadores
+# print(len("Hola"))
+# print(len((1, 2, 3, 4)))
+# print(len([1, 2, 3, 4]))
+### Métodos (sobre escritura)
+# class Animal:
+#     def hablar(self):
+#         print("...")
+
+
+# class Gato(Animal):
+#     def hablar(self):
+#         print("Miau")
+
+
+# class Perro(Animal):
+#     def hablar(self):
+#         print("Guau")
+
+
+# mascotas = (Gato(), Perro())
+# for mascota in mascotas:
+#     mascota.hablar()
+
+
+### Sobrecarga de métodos
+# class Pedido:
+#     """Clase para procesar pedidos con opciones flexibles."""
+
+#     def procesar_pedido(self, cantidad, **kwargs):
+#         """Simula sobrecarga permitiendo múltiples configuraciones en un pedido."""
+#         mensaje = f"Pedido de {cantidad} productos."
+
+#         if "metodo_pago" in kwargs:
+#             mensaje += f" Pago con {kwargs['metodo_pago']}."
+
+#         if "direccion_envio" in kwargs:
+#             mensaje += f" Envío a {kwargs['direccion_envio']}."
+
+#         if "descuento" in kwargs:
+#             mensaje += f" Aplicado {kwargs['descuento']}% de descuento."
+
+#         print(mensaje)
+
+
+# pedido = Pedido()
+# pedido.procesar_pedido(3)
+# pedido.procesar_pedido(5, metodo_pago="Tarjeta")
+# pedido.procesar_pedido(2, direccion_envio="Quito")
+# pedido.procesar_pedido(
+#     10, metodo_pago="PayPal", descuento=15, direccion_envio="Guayaquil"
+# )
+
+
+### Duck typing
+# class Pato:
+#     def volar(self):
+#         print("El pato vuela")
+
+
+# class Avion:
+#     def volar(self):
+#         print("El avión despega")
+
+
+# def despegar(obj):
+#     obj.volar()
+
+
+# despegar(Pato())
+# despegar(Avion())
+
+## Abstracción
+# from abc import ABC, abstractmethod
+
+
+# class Vehiculo(ABC):
+#     def __init__(self, nombre):
+#         self.nombre = nombre
+
+#     @abstractmethod
+#     def arrancar(self):
+#         pass
+
+#     @abstractmethod
+#     def detener(self):
+#         pass
+
+
+# class Auto(Vehiculo):
+#     def arrancar(self):
+#         return f"El auto {self.nombre} ha arrancado"
+
+#     def detener(self):
+#         return f"El auto {self.nombre} se ha detenido"
+
+
+# class Moto(Vehiculo):
+#     def arrancar(self):
+#         return f"La moto {self.nombre} ha arrancado"
+
+#     def detener(self):
+#         return f"La moto {self.nombre} se ha detenido"
+
+
+# def vehiculo_arrancar(obj):
+#     return obj.arrancar()
+
+
+# def vehiculo_detener(obj):
+#     return obj.detener()
+
+
+# vehiculos = (Auto("Beto"), Moto("Martita"))
+# for vehiculo in vehiculos:
+#     print(vehiculo_arrancar(vehiculo))
+#     print(vehiculo_detener(vehiculo))
+
+
+## Encapsulamiento
+# class Cuenta:
+#     def __init__(self, saldo):
+#         self.__saldo = saldo
+
+#     def mostrar_saldo(self):
+#         return f"Saldo: {self.__saldo}"
+
+
+# c = Cuenta(100)
+# OtraCuenta()
+# # print(c.__saldo)  # Sin name-mangling.
+# print(c._Cuenta__saldo)  # Con name-mangling.
+# print(c.mostrar_saldo())
+
+
+### Propiedades con @property
+# Sin @property
+# class Empleado:
+#     """Clase para representar un empleado."""
+
+#     def __init__(self, nombre, salario):
+#         # No uses getters ni setters en atributos públicos que son muy simples,
+#         # accede directamente a ellos.
+#         self.nombre = nombre
+#         self._salario = salario
+
+#     def __str__(self):
+#         return f"Empleado: {self.nombre} con un salario de ${self._salario}"
+
+#     def get_salario(self):
+#         """Método para retornar el salario de un empleado."""
+#         return self._salario
+
+#     def set_salario(self, valor):
+#         """Método para asignar el salario a un empleado."""
+#         if valor < 0:
+#             raise ValueError("Salario no puede ser negativo")
+#         self._salario = valor
+
+
+# e = Empleado("Ana", 5000)
+# print(e, e.get_salario())
+# e.nombre = "Anabel"
+# e.set_salario(6000)
+# print(e)
+# e.set_salario(-100)
+
+
+# Con @property
+# class Empleado:
+#     """Clase para representar un empleado."""
+
+#     def __init__(self, nombre, salario):
+#         # No uses getters ni setters en atributos públicos que son muy simples,
+#         # accede directamente a ellos.
+#         self.nombre = nombre
+#         self._salario = salario
+
+#     def __str__(self):
+#         return f"Empleado: {self.nombre} con un salario de ${self._salario}"
+
+#     @property
+#     def salario(self):
+#         """Método para retornar el salario de un empleado."""
+#         return self._salario
+
+#     # Define sólo los setters que realmente necesites; de lo contrario,
+#     # expón sólo el getter para hacerlo de sólo lectura.
+#     @salario.setter
+#     def salario(self, valor):
+#         if valor < 0:
+#             raise ValueError("Salario no puede ser negativo")
+#         self._salario = valor
+
+
+# e = Empleado("Ana", 5000)
+# print(e, e.salario)
+# e.nombre = "Anabel"
+# e.salario = 6000
+# print(e)
+# e.salario = -100
+
+
+### Validaciones con getters y setters
+# class PersonaSinValidacion:
+#     """Clase para representar a una persona con su atributo edad no validado."""
+
+#     def __init__(self, nombre, edad):
+#         self.nombre = nombre
+#         self.edad = edad  # Se asigna directamente sin validación
+
+
+# persona = PersonaSinValidacion("Ana", 25)
+# persona.edad = -5
+# print("La edad es:", persona.edad)
+
+
+# class Persona:
+#     def __init__(self, nombre, edad):
+#         self._nombre = nombre
+#         self._edad = None
+#         self.edad = edad
+
+#     @property
+#     def edad(self):
+#         """Getter para edad."""
+#         return self._edad
+
+#     @edad.setter
+#     def edad(self, valor):
+#         """Setter para edad."""
+#         if not isinstance(valor, int) or valor <= 0:
+#             raise ValueError(
+#                 f"La edad que ingresaste ({valor}) debe ser un número positivo."
+#             )
+#         self._edad = valor
+#         # self.edad = valor # Error recursion infinita.
+
+
+# persona = Persona("Ana", 25)
+# try:
+#     persona.edad = -5
+# except ValueError as e:
+#     print(f"Error: {e}")
+
+
+### Métodos privados
+# class Calculadora:
+#     """Clase para representar a una calculadora."""
+
+#     def __init__(self):
+#         pass
+
+#     def __sumar(self, a, b):
+#         return a + b
+
+#     def __restar(self, a, b):
+#         return a - b
+
+#     def resultado(self, a, b, operacion="sumar"):
+#         """Método para retornar el resultado de una operación matemática."""
+#         if operacion == "sumar":
+#             return self.__sumar(a, b)
+#         elif operacion == "restar":
+#             return self.__restar(a, b)
+#         else:
+#             raise ValueError("Operación no válida. Usa 'sumar' o 'restar'.")
+
+
+# c = Calculadora()
+# print(c.resultado(2, 3, "sumar"))
+# print(c.resultado(5, 2, "restar"))
+# c.__restar(5, 2) # Da error.
+
+
 # End: POO
