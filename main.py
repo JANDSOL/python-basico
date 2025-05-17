@@ -708,4 +708,65 @@
 # c.__restar(5, 2) # Da error.
 
 
+## Manejo de excepciones personalizadas
+# class LibroNoDisponibleBasica(Exception):
+#     pass
+
+
+# inventario = {"Cien años de soledad": 2, "El Aleph": 0, "Don Quijote": 1}
+
+
+# def prestar_libro_basico(titulo):
+#     if inventario.get(titulo, 0) <= 0:
+#         raise LibroNoDisponibleBasica(
+#             f"El libro {titulo!r} no está disponible actualmente."
+#         )
+#     inventario[titulo] -= 1
+#     return f"Libro {titulo!r} prestado con éxito."
+
+
+# try:
+#     print(prestar_libro_basico("El Aleph"))
+# except LibroNoDisponibleBasica as e:
+#     print(f"Error: {e}")
+
+
+# class LibroNoDisponibleError(Exception):
+#     """Excepción personalizada para indicar que un libro no está disponible."""
+
+#     def __init__(self, titulo):
+#         super().__init__(f"El libro {titulo!r} no está disponible actualmente.")
+#         self.titulo = titulo
+
+
+# inventario = {"Cien años de soledad": 2, "El Aleph": 0, "Don Quijote": 1}
+
+
+# def prestar_libro(titulo):
+#     """Función para prestar un libro"""
+#     if inventario.get(titulo, 0) <= 0:
+#         raise LibroNoDisponibleError(titulo)
+#     inventario[titulo] -= 1
+#     return (
+#         f"Libro '{titulo}' prestado con éxito. Quedan {inventario[titulo]} ejemplares."
+#     )
+
+
+# try:
+#     print(prestar_libro("El Aleph"))
+# except LibroNoDisponibleError as e:
+#     print(f"Error: {e}")
+
+## Logging
+# from logger_setup import logger
+
+# logger.debug("Este es un mensaje DEBUG, útil para depuración.")
+# logger.info("Este es un mensaje INFO, indica eventos normales.")
+# logger.warning("Este es un mensaje WARNING, algo puede estar mal.")
+# logger.error("Este es un mensaje ERROR, algo falló.")
+# logger.critical("Este es un mensaje CRITICAL, posible fallo grave.")
+
+## Tests
+
+
 # End: POO
