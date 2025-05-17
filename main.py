@@ -304,4 +304,131 @@
 # print(Matematicas.sumar(5, 3))
 # print(Matematicas.restar(5, 3))
 
+
+## Herencia
+# class Animal:
+#     """Clase para representar a un animal."""
+
+#     def saludar(self):
+#         """Método de saludar"""
+#         print("¡Hola, soy un animal!")
+
+
+# class Perro(Animal):
+#     """Clase para representar a un perro."""
+
+#     def saludar(self):
+#         print("¡Guau! soy un perro")
+
+
+# mi_obj_perro = Perro()
+# mi_obj_perro.saludar()
+
+
+# class Padre:
+#     def __init__(self, apellido):
+#         self.apellido = apellido
+
+#     def saludar(self):
+#         return f"Hola, soy {self.apellido} el Padre"
+
+
+# class Hija(Padre):
+#     def __init__(self, nombre, apellido, edad):
+#         super().__init__(apellido)  # Llamamos al constructor de la clase Padre.
+#         self.nombre = nombre
+#         self.edad = edad
+
+#     def saludar(self):
+#         return_saludar_del_padre = super().saludar()
+#         return f"{return_saludar_del_padre}. Y yo soy {self.nombre} {self.apellido} la Hija y tengo {self.edad} años."
+
+
+# persona = Hija("Ana", "Paredes", 25)
+# print(persona.saludar())
+
+
+# Ejemplo más realista
+# class Persona:
+#     """Clase para representar a una persona."""
+
+#     def __init__(self, nombre):
+#         self.nombre = nombre
+
+
+# class Empleado(Persona):
+#     """Clase para representar a un empleado."""
+
+#     def __init__(self, nombre, puesto):
+#         super().__init__(nombre)
+#         self.puesto = puesto
+
+#     def saludar(self):
+#         """Método para saludar."""
+#         print(f"Hola, soy {self.nombre} y trabajo como {self.puesto}")
+
+
+# emp = Empleado("Ana", "Diseñadora")
+# emp.saludar()
+
+
+# class Persona:
+#     """Clase para representar a una persona."""
+
+#     def __init__(self, nombre):
+#         self.nombre = nombre
+
+
+# class Cliente(Persona):
+#     """Clase para representar a un cliente."""
+
+#     def __init__(self, nombre, numero):
+#         super().__init__(nombre)
+#         self.numero = numero
+
+#     def info(self):
+#         """Método para mostrar la información del cliente."""
+#         return f"Cliente {self.nombre}, Nº {self.numero}"
+
+
+# class ClienteVIP(Cliente):
+#     """Clase para representar a un cliente VIP."""
+
+#     def __init__(self, nombre, numero, descuento):
+#         super().__init__(nombre, numero)
+#         self.descuento = descuento
+
+#     def info(self):
+#         """Método para mostrar la información del cliente."""
+#         return f'Cliente {self.nombre} "VIP", Nº {self.numero}, Descuento: {self.descuento}%'
+
+
+# cliente = Cliente("Pedro", 101)
+# print(cliente.info())
+# vip = ClienteVIP("Juan", 102, 20)
+# print(vip.info())
+
+
+# class Motor:
+#     """Clase para representar a un motor."""
+
+#     def __init__(self, caballos):
+#         self.caballos = caballos
+
+#     def describir(self):
+#         return f"{self.caballos} caballos de vapor (CV)"
+
+
+# class Coche:
+#     def __init__(self, marca, motor):
+#         self.marca = marca
+#         self.motor = motor
+
+#     def enceder(self):
+#         print(f"{self.marca} arrancando con un motor de {self.motor.describir()}")
+
+# motor_v6 = Motor(200)
+# mi_auto = Coche(marca="Toyota", motor=motor_v6)
+# mi_auto.enceder()
+
 # End: POO
